@@ -31,7 +31,7 @@ class Recipes extends Component {
         // Local server
         // this.fetchAllRecipes('http://localhost:5000/api/recipes');
         // Live server
-        this.fetchAllRecipes('https://localhost:5000/api/recipes');
+        this.fetchAllRecipes('http://localhost:5000/api/recipes');
     }
 
 
@@ -70,4 +70,6 @@ class Recipes extends Component {
 
 
 export default Recipes;
+
+
 
