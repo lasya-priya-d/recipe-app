@@ -8,7 +8,6 @@ const methodOverride = require('method-override');
 const app = express();
 
 // Middlewares
-// I've set the maximum size of data to be transferred
 app.use(bodyParser.urlencoded({
         limit: '15mb',
         extended: true
@@ -40,21 +39,15 @@ connect.once('open', () => {
 
 // Creating a route for POST requests from the form
 app.post('/upload',(req, res) => {
-        // To upload multiple images it would be upload.array() and req.files and also you would have the change the type of the image within the schema from Object to Array since the result will be a list of images.
         const recipe = new recipes({ title: req.body.title, image: req.body.image, duration: req.body.duration, steps: req.body.steps, rating: req.body.rating });        
         recipe.save((err, recipes) => {
         if(err) console.log(err);
         else {
                 console.log('New recipe successfully added...');
-        }
-        
-        // setTimeout(() => {res.redirect('http://localhost:3000/')}, 500);           
+        }         
 });
-        // setTimeout(() => {res.redirect('http://localhost:3000/')}, 500);
 });
 
-
-// Receive a post request with the title, do a search and then return the found document.
 app.post('/api/recipes/single', (req, res) => {
         recipes.findOne({title: req.body.title}, (err, data) => {
                 if(err) console.log(err);
@@ -65,8 +58,6 @@ app.post('/api/recipes/single', (req, res) => {
         });
 });
 
-
-// Find all recipes stored
 app.get('/api/recipes', (req, res) => {
         recipes.find((err, data) => {
                 if(err) console.log(err);
@@ -77,8 +68,6 @@ app.get('/api/recipes', (req, res) => {
         });
 });
 
-
-// Basic route to get all files GET /files
 app.get('/files', (req, res) => {
         gfs.files.find().toArray((err, files) => {
                 // Check if files
@@ -92,7 +81,6 @@ app.get('/files', (req, res) => {
         });
 });
 
-// Basic route to get a single file  GET /files/:filename
 app.get('/files/:filename', (req, res) =>{
         gfs.files.findOne({filename: req.params.filename}, (err, file) => {
                 // Check if file
@@ -106,8 +94,6 @@ app.get('/files/:filename', (req, res) =>{
         });
 });
 
-
-// Basic route to display a single image  GET /image/:filename
 app.get('/image/:filename', (req, res) =>{
         gfs.files.findOne({filename: req.params.filename}, (err, file) => {
                 // Check if file
