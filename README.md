@@ -1,11 +1,9 @@
 # Recipe-App
 
-This is a basic recipe app which allows the user to create and view recipes.
+This is our project for the course Web Technologies. It is a basic recipe app which allows the user to create and view recipes, which basically has the application of serving as a user's very own cookbook. We made this by implementing MERN stack and a few related technologies. 
+Please find below the required files of code along with the powerpoint presentation (UE19CS204 – WT – Recipe App Project Report) about our project.
 
-Once forked, whilst within the root folder and in the Terminal type in "npm install" to install all the dependencies and also npm install nodemon --save.
-
-To run the app, whilst within the root folder within a terminal type in npm run Client and then create another instance of the terminal type in npm run Server. Open a browser window and type in localhost:4200.
-
-*** Starting the server locally is no longer necessary since the server is now live on Heroku. ***
-
-To access the live app please follow this link https://www.chrisjonathan.co.uk/react-recipe-app/ ."# recipe-app" 
+MADE BY: (From section B)
+Beru Neha - PES2UG19CS084
+Dhanawada Lasya Priya - PES2UG19CS111
+Deepali Suraj Attavar - PES2UG19CS106
