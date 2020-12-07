@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './RecipeForm.scss';
-
+import axios from 'axios';
 export default class RecipeForm extends Component {
     constructor(props) {
         super(props);
@@ -98,23 +98,13 @@ export default class RecipeForm extends Component {
             
             // Send the data
             // Live server
-            fetch('https://localhost:5000/upload', {
-                method: 'post',
-                redirect: 'follow',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                // Turn the object to json
-                body: JSON.stringify({
+            axios.post('http://localhost:5000/upload', {
                     title: obj.title,
                     image: obj.image,
                     duration: obj.duration,
                     steps: obj.steps,
                     rating: obj.rating
-                })
-            })
-            .then((res) => {
+                }).then((res) => {
                 // A message to let me know that the data has been sent
                 console.log('Data sent!');       
             }).catch((e)=> console.log(e));
