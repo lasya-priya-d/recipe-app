@@ -18,7 +18,7 @@ const Recipe = (props) => {
                 <p className='recipe_info'>Duration:</p>
                 <p className='recipe_content'>{recipe.duration}</p>
                 <p className='recipe_info'>Steps:</p>
-                <p className='recipe_content recipe_steps'>{recipe.steps}</p>
+                <p className='recipe_content'>{recipe.steps}</p>
                 <p className='recipe_info'>Difficulty:</p>
                 <div id="stars_outer" style={{ display: 'inline-block' }}>
                     <div id="stars_inner" style={{ width: `${starPercentageRounded}` }}></div>
